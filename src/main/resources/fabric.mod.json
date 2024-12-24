@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "primordial",
+	"version": "${version}",
+	"name": "Primordial",
+	"description": "Conquer the primordial elements and bend them to your will.",
+	"authors": [
+		"TTZPlayz"
+	],
+	"contact": {
+		"homepage": "https://primordial.net/",
+		"sources": "https://github.com/TTZPlayz/primordial"
+	},
+	"license": "All Rights Reserved",
+	"icon": "assets/primordial/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.ttzplayz.primordial.Primordial"
+		],
+		"fabric-datagen": [
+			"net.ttzplayz.primordial.PrimordialDataGenerator"
+		],
+		"client": [
+			"net.ttzplayz.primordial.PrimordialClient"
+		]
+	},
+	"mixins": [
+		"primordial.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
