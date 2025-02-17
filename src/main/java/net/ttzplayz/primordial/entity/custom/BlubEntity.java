@@ -18,11 +18,9 @@ public class BlubEntity extends HostileEntity {
     protected void initGoals() {
         this.goalSelector.add(5, new GoToWalkTargetGoal(this, 1.0));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0, 0.0F));
-        this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(0, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
         this.targetSelector.add(1, new RevengeGoal(this).setGroupRevenge());
-        this.targetSelector.add(2, new ActiveTargetGoal(this, PlayerEntity.class, true)); {
-        }
     }
 
     public static DefaultAttributeContainer.Builder createAttributes() {

@@ -14,6 +14,5 @@ public class PrimordialClient implements ClientModInitializer {
     public void onInitializeClient() {
         EntityModelLayerRegistry.registerModelLayer(BlubModel.BLUB, BlubModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.BLUB, BlubRenderer::new);
-
     }
 }
