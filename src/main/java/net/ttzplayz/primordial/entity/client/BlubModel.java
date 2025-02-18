@@ -17,7 +17,6 @@ public class BlubModel<T extends BlubEntity> extends SinglePartEntityModel<T> {
 	public static final EntityModelLayer BLUB = new EntityModelLayer(Identifier.of(Primordial.MOD_ID, "blub"), "main");
 	private final ModelPart blub;
 	private final ModelPart head;
-
 	public BlubModel(ModelPart root) {
 		this.blub = root.getChild("blub");
 		this.head = this.blub.getChild("head");
@@ -25,25 +24,25 @@ public class BlubModel<T extends BlubEntity> extends SinglePartEntityModel<T> {
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData blub = modelPartData.addChild("blub", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 28.0F, 0.0F));
+		ModelPartData blub = modelPartData.addChild("blub", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
-		ModelPartData head = blub.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -20.0F, 0.0F));
+		ModelPartData head = blub.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -20.0F, 0.0F));
 
-		ModelPartData eye1 = head.addChild("eye1", ModelPartBuilder.create().uv(0, 4).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(1.0F, -3.0F, 2.0F));
+		ModelPartData eye1 = head.addChild("eye1", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(2.0F, 1.0F, -1.0F));
 
-		ModelPartData eye2 = head.addChild("eye2", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(1.0F, -5.0F, -2.0F));
+		ModelPartData eye2 = head.addChild("eye2", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -1.0F, -1.0F));
 
-		ModelPartData rods = blub.addChild("rods", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -11.0F, 0.0F));
+		ModelPartData rods = blub.addChild("rods", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -15.0F, 0.0F));
 
-		ModelPartData core = rods.addChild("core", ModelPartBuilder.create().uv(0, 16).cuboid(-2.0F, -8.0F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+		ModelPartData core = rods.addChild("core", ModelPartBuilder.create().uv(0, 16).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-		ModelPartData rod1 = rods.addChild("rod1", ModelPartBuilder.create().uv(16, 16).cuboid(-8.0F, -1.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -7.0F, 0.0F));
+		ModelPartData rod1 = rods.addChild("rod1", ModelPartBuilder.create().uv(16, 16).cuboid(-1.0F, 0.0F, -8.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-		ModelPartData rod2 = rods.addChild("rod2", ModelPartBuilder.create().uv(16, 16).cuboid(6.0F, -1.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -7.0F, 0.0F));
+		ModelPartData rod2 = rods.addChild("rod2", ModelPartBuilder.create().uv(16, 16).cuboid(-1.0F, 0.0F, 6.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-		ModelPartData rod3 = rods.addChild("rod3", ModelPartBuilder.create().uv(16, 16).cuboid(-1.0F, -7.0F, 6.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -1.0F, 0.0F));
+		ModelPartData rod3 = rods.addChild("rod3", ModelPartBuilder.create().uv(16, 16).cuboid(6.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-		ModelPartData rod4 = rods.addChild("rod4", ModelPartBuilder.create().uv(16, 16).cuboid(-1.0F, -7.0F, -8.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -1.0F, 0.0F));
+		ModelPartData rod4 = rods.addChild("rod4", ModelPartBuilder.create().uv(16, 16).cuboid(-8.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 		return TexturedModelData.of(modelData, 32, 32);
 	}
 	@Override

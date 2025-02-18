@@ -10,7 +10,7 @@ import net.ttzplayz.primordial.entity.custom.BlubEntity;
 
 public class BlubRenderer extends MobEntityRenderer<BlubEntity, BlubModel<BlubEntity>> {
     public BlubRenderer(EntityRendererFactory.Context context) {
-        super(context, new BlubModel<>(context.getPart(BlubModel.BLUB)), 0.75f);
+        super(context, new BlubModel<>(context.getPart(BlubModel.BLUB)), 0.5f);
     }
 
     @Override
