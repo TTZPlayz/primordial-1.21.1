@@ -91,11 +91,8 @@ public class BlubEntity extends HostileEntity {
     }
 
     private void performRangedAttack(LivingEntity target, float pullProgress) {
-        BlubbleEntity blubble = new BlubbleEntity(this.getWorld(), this);
-        double dX = target.getX() - this.getX();
-        double dY = target.getBodyY(0.5D) - blubble.getY();
-        double dZ = target.getZ() - this.getZ();
-        blubble.setVelocity(dX, dY, dZ, 1.5F, 1.0F);
+        BlubbleProjectileEntity blubble = new BlubbleProjectileEntity(this.getWorld(), this);
+        blubble.setVelocity(this, this.getPitch(), this.getYaw(), 0.0f, 1.5f, 0f);
         this.getWorld().spawnEntity(blubble);
 
         this.playSound(SoundEvents.ENTITY_GENERIC_SPLASH, 1.0F, 1.0F);
@@ -112,7 +109,7 @@ public class BlubEntity extends HostileEntity {
 
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 80;
+            this.idleAnimationTimeout = 160;
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;

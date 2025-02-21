@@ -10,7 +10,7 @@ import net.ttzplayz.primordial.entity.custom.BlubEntity;
 
 public class BlubRenderer extends MobEntityRenderer<BlubEntity, BlubModel<BlubEntity>> {
     public BlubRenderer(EntityRendererFactory.Context context) {
-        super(context, new BlubModel<>(context.getPart(BlubModel.BLUB)), 0.5f);
+        super(context, new BlubModel<>(context.getPart(BlubModel.BLUB)), 0.25f);
     }
 
     @Override
@@ -25,6 +25,7 @@ public class BlubRenderer extends MobEntityRenderer<BlubEntity, BlubModel<BlubEn
         } else {
             matrixStack.scale(1f, 1f, 1f);
         }
+        matrixStack.translate(0f, 0.5f, 0f);
 
         super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }

@@ -28,7 +28,7 @@ public class BlubModel<T extends BlubEntity> extends SinglePartEntityModel<T> {
 
 		ModelPartData head = blub.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -20.0F, 0.0F));
 
-		ModelPartData eye1 = head.addChild("eye1", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(2.0F, 1.0F, -1.0F));
+		ModelPartData eye1 = head.addChild("eye1", ModelPartBuilder.create().uv(0, 4).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(2.0F, 1.0F, -1.0F));
 
 		ModelPartData eye2 = head.addChild("eye2", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -1.0F, -1.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -1.0F, -1.0F));
 

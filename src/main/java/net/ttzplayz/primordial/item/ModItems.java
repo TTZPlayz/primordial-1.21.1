@@ -11,9 +11,11 @@ import net.minecraft.util.Identifier;
 import net.ttzplayz.primordial.Primordial;
 import net.ttzplayz.primordial.entity.ModEntities;
 import net.ttzplayz.primordial.entity.custom.BlubEntity;
+import net.ttzplayz.primordial.item.custom.BlubbleItem;
 
 public class ModItems {
-    public static final Item BLUBBLE = registerItem("blubble", new Item(new Item.Settings()));
+    public static final Item BLUBBLE = registerItem("blubble",
+            new BlubbleItem(new Item.Settings().maxCount(16)));
 
     //SPAWN EGGS
     public static final Item BLUB_SPAWN_EGG = registerItem("blub_spawn_egg",
