@@ -3,6 +3,7 @@ package net.ttzplayz.primordial;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.ttzplayz.primordial.block.ModBlocks;
 import net.ttzplayz.primordial.effect.ModEffects;
 import net.ttzplayz.primordial.entity.ModEntities;
 import net.ttzplayz.primordial.entity.custom.BlubEntity;
@@ -18,6 +19,7 @@ public class Primordial implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ModEffects.registerEffects();
 		ModEntities.registerModEntities();
 		ModItemGroups.registerItemGroups();

@@ -25,7 +25,7 @@ public class ParalysisStatusEffect extends StatusEffect {
                 );
             }
         }
-        return false;
+        return true;
     }
 
     @Override

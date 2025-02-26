@@ -9,7 +9,9 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.EnumSet;
@@ -79,7 +81,7 @@ public class BlubEntity extends HostileEntity {
                 this.blub.getLookControl().lookAt(target, 30.0F, 30.0F);
                 if (--this.updateCountdownTicks <= 0) {
                     this.updateCountdownTicks = this.attackIntervalMin + this.blub.getRandom().nextInt(this.attackIntervalMax - this.attackIntervalMin + 1);
-                    this.blub.performRangedAttack(target, 1.0F);
+                    this.blub.attack(target, 1.0F);
                 }
             } else {
                 this.blub.getNavigation().startMovingTo(target, this.speed);
@@ -90,9 +92,13 @@ public class BlubEntity extends HostileEntity {
         }
     }
 
-    private void performRangedAttack(LivingEntity target, float pullProgress) {
+
+    public void attack(LivingEntity target, float pullProgress) {
         BlubbleProjectileEntity blubble = new BlubbleProjectileEntity(this.getWorld(), this);
-        blubble.setVelocity(this, this.getPitch(), this.getYaw(), 0.0f, 1.5f, 0f);
+        double dX = target.getX() - this.getX();
+        double dY = target.getBodyY(0.5D) - blubble.getY();
+        double dZ = target.getZ() - this.getZ();
+        blubble.setVelocity(dX, dY, dZ, 1.5F, 1.0F);
         this.getWorld().spawnEntity(blubble);
 
         this.playSound(SoundEvents.ENTITY_GENERIC_SPLASH, 1.0F, 1.0F);
